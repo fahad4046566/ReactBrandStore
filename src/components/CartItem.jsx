@@ -53,9 +53,9 @@ const CartItem = ({ id, title, image, price, amount, max }) => {
   <div className="flex justify-end md:justify-center items-center">
     <button 
       onClick={() => removeItem(id)}
-      className="p-2 bg-red-50 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-all shadow-sm cursor-pointer"
+      className="p-2 bg-red-50 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-all shadow-sm"
     >
-      <MdDelete className="text-lg md:text-xl" />
+      <MdDelete className="cursor-pointer text-lg md:text-xl" />
     </button>
   </div>
 </div>

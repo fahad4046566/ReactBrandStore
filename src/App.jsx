@@ -8,6 +8,7 @@ import Cart from "./Cart";
 import Error from "./Error";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import OrderSuccess from "./components/OrderSuccess";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/singleProduct/:id" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order-success" element={<OrderSuccess/>} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer/>

@@ -79,7 +79,7 @@ const ProductList = () => {
 
         {/* View Details Button */}
         <NavLink to={`/singleProduct/${id}`}>
-          <button className="h-11 w-11 rounded-xl bg-gray-900 text-white flex items-center justify-center transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-200 group/btn">
+          <button className=" h-10 w-15 hover:cursor-pointer rounded-xl bg-gray-900 text-white flex items-center justify-center transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-200 group/btn">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               fill="none" 
