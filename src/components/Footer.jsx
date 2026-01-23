@@ -1,6 +1,7 @@
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter} from "react-icons/fa";
+import logo from '../assets/Logo-removebg-preview.png';
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
     
     {/* Column 1: Brand Info */}
     <div className="space-y-6">
-      <img src="/src/assets/Logo-removebg-preview.png" alt="Logo" className="w-40 brightness-200" />
+      <img src={logo} alt="Logo" className="w-40 brightness-200" />
       <p className="text-sm leading-relaxed">
         Your one-stop premium shop for all your lifestyle needs. High quality products delivered to your doorstep.
       </p>

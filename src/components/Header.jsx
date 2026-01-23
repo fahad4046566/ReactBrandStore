@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import { HiX } from "react-icons/hi";
 import Nav from "./Nav";
+import logo from '../assets/Logo-removebg-preview.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
     <>
       <div className="md:h-30 shadow-xl border-b-0.5 bg-gray-50 flex justify-between items-center p-5 text-xl sticky top-0 z-50 w-full">
         <div className="logo  w-80">
-          <img src="/src/assets/Logo-removebg-preview.png" alt="" />
+          <img src={logo} alt="" />
         </div>
 
         <div

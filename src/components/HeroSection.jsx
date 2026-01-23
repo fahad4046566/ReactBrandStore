@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import HeroImage from '../assets/HeroImage.png'
 
 const HeroSection = () => {
   return (
@@ -25,7 +26,7 @@ const HeroSection = () => {
   <div className="hero-image md:w-1/2 flex justify-center">
     <img
       className="rounded-3xl shadow-2xl w-full max-w-125 object-cover"
-      src="src/assets/HeroImage.png"
+      src={HeroImage}
       alt="Hero"
     />
   </div>
