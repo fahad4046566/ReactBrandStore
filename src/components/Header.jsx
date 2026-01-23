@@ -22,7 +22,7 @@ const Header = () => {
         </div>
 
         <div className="nav">
-          <Nav isOpen={isOpen} />
+          <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </div>
     </>

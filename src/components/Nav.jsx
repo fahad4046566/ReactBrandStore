@@ -1,20 +1,19 @@
 import { BsCart2 } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useCartContext } from "./context/CartContext";
+import { useEffect , useCallback} from "react";
 
 const Nav = ({ isOpen, setIsOpen }) => {
   const { totalItem } = useCartContext();
+  const location = useLocation();
 
-  const closeMenu = () => {
+   const closeMenu = useCallback(() => {
     setIsOpen(false);
-  };
+  }, [setIsOpen]);
 
-
-  const handleClick = (e) => {
+  useEffect(() => {
     closeMenu();
-    e?.stopPropagation?.();
-  };
-
+  }, [location.pathname, closeMenu]);
   return (
     <div>
       <ul
@@ -33,12 +32,11 @@ const Nav = ({ isOpen, setIsOpen }) => {
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
-            onClick={handleClick}
           >
             Home
           </NavLink>
         </li>
-        
+
         <li>
           <NavLink
             to="/about"
@@ -47,12 +45,11 @@ const Nav = ({ isOpen, setIsOpen }) => {
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
-            onClick={handleClick}
           >
             About
           </NavLink>
         </li>
-        
+
         <li>
           <NavLink
             to="/contact"
@@ -61,12 +58,11 @@ const Nav = ({ isOpen, setIsOpen }) => {
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
-            onClick={handleClick}
           >
             Contact
           </NavLink>
         </li>
-        
+
         <li>
           <NavLink
             to="/product"
@@ -75,21 +71,17 @@ const Nav = ({ isOpen, setIsOpen }) => {
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
-            onClick={handleClick}
           >
             Products
           </NavLink>
         </li>
-        
+
         <li>
           <NavLink
             to="/cart"
             className={({ isActive }) =>
-              isActive
-                ? "text-blue-600 font-bold"
-                : "text-gray-600 font-bold"
+              isActive ? "text-blue-600 font-bold" : "text-gray-600 font-bold"
             }
-            onClick={handleClick}
           >
             <div className="relative flex items-center">
               <BsCart2 className="text-3xl" />
