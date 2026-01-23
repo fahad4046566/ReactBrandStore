@@ -1,7 +1,10 @@
 import React from 'react'
 import HeroSection from './components/HeroSection'
-
+import { useEffect } from 'react';
 const About = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div>
    {/* About Page Hero - Reversed Layout */}

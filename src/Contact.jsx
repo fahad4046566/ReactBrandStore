@@ -1,6 +1,9 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-
+import { useEffect } from "react";
 const Contact = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <section className="py-20 px-5 md:px-20 bg-white">
       <div className="max-w-300 mx-auto">
@@ -50,14 +53,6 @@ const Contact = () => {
 
             {/* Placeholder for Map */}
             <div className="w-full h-64 bg-gray-200 rounded-2xl overflow-hidden shadow-inner">
-              {/* <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645000000000!5m2!1sen!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-              ></iframe> */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3465.986377100863!2d72.53051807544676!3d29.691174635222414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDQxJzI4LjIiTiA3MsKwMzEnNTkuMSJF!5e0!3m2!1sen!2s!4v1768724992225!5m2!1sen!2s"
                 width="100%"

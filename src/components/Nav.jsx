@@ -2,8 +2,11 @@ import { BsCart2 } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "./context/CartContext";
 
-const Nav = ({isOpen}) => {
+const Nav = ({isOpen,setIsOpen}) => {
   const {totalItem} = useCartContext()
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
   return (
     <>
       <div>
@@ -17,12 +20,14 @@ const Nav = ({isOpen}) => {
       justify-center items-center
     `}>
           <NavLink
+
             to="/"
             className={({ isActive }) =>
               isActive
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
+             onClick={closeMenu} 
           >
             <li>Home</li>
           </NavLink>
@@ -33,6 +38,7 @@ const Nav = ({isOpen}) => {
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
+             onClick={closeMenu} 
           >
             <li>About</li>
           </NavLink>
@@ -43,6 +49,7 @@ const Nav = ({isOpen}) => {
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
+             onClick={closeMenu} 
           >
             <li>Contact</li>
           </NavLink>
@@ -53,6 +60,7 @@ const Nav = ({isOpen}) => {
                 ? "text-blue-600 font-bold underline"
                 : "text-gray-600 font-bold"
             }
+             onClick={closeMenu} 
           >
             <li>Products</li>
           </NavLink>
@@ -61,6 +69,7 @@ const Nav = ({isOpen}) => {
             className={({ isActive }) =>
               isActive ? "text-blue-600 font-bold" : "text-gray-600 font-bold"
             }
+              onClick={closeMenu} 
           >
             <li className="relative flex items-center">
               <BsCart2 className="text-3xl" />
@@ -68,6 +77,7 @@ const Nav = ({isOpen}) => {
                 {totalItem}
               </span>
             </li>
+           
           </NavLink>
         </ul>
       </div>
@@ -76,4 +86,4 @@ const Nav = ({isOpen}) => {
 };
 
 export default Nav;
-Nav;
+

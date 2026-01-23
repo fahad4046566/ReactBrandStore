@@ -5,7 +5,7 @@ import CartAmountToggle from "./CartAmountToggle";
 import { useCartContext } from "./context/CartContext";
 
 const CartItem = ({ id, title, image, price, amount, max }) => {
-  // const [localAmount, setLocalAmount] = useState(amount);
+
   const { setDecrease, setIncrease, removeItem } = useCartContext();
 
   return (

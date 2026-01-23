@@ -1,9 +1,12 @@
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import CartItem from "./components/CartItem";
 import { useCartContext } from "./components/context/CartContext";
 import FormatPrice from "./Helpers/FormatPrice";
-
+import { useEffect } from "react";
 const Cart = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { cart, clearCart, total_amount, shipping_fee } = useCartContext();
   const navigate = useNavigate();
   const handleCheckout = () => {

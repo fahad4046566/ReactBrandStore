@@ -4,12 +4,15 @@ import Sort from "./components/Sort";
 import { useFilterContext } from "./components/context/FilterContext";
 import { useProductContext } from "./components/context/ProductContext";
 import Loader from "./components/Loader";
+import { useEffect } from "react";
 
 
 const Product = () => {
   const { filter_products } = useFilterContext();
   const {isLoading} = useProductContext()
-
+ useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if(isLoading){
   return <Loader/>
   }
@@ -29,22 +32,27 @@ const Product = () => {
 
         {/* Right Column: Product Area (Width 3/4) */}
         <main className="w-full lg:w-3/4">
-          {/* Header Row: Count and Sort */}
-          <div className="flex items-center justify-between mb-8 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-            <div className="flex items-center gap-3">
-              <span className="bg-indigo-600 text-white px-3 py-1 rounded-lg text-sm font-bold">
-                {filter_products.length}
-              </span>
-              <p className="text-gray-500 font-medium tracking-wide text-sm uppercase">
-                Products Found
-              </p>
-            </div>
-            
-            <div className="flex items-center gap-2 bg-gray-50 px-4 py-1 rounded-xl border border-gray-100">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Sort By:</span>
-              <Sort />
-            </div>
-          </div>
+<div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+  {/* Products Count - Left side */}
+  <div className="flex items-center gap-3 w-full md:w-auto">
+    <span className="bg-indigo-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-10 text-center">
+      {filter_products.length}
+    </span>
+    <p className="text-gray-500 font-medium tracking-wide text-sm uppercase truncate">
+      Products Found
+    </p>
+  </div>
+  
+  {/* Sort By - Right side */}
+  <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-xl border border-gray-100 w-full md:w-auto justify-between md:justify-start">
+    <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter whitespace-nowrap">
+      Sort By:
+    </span>
+    <div className="w-full md:w-auto">
+      <Sort />
+    </div>
+  </div>
+</div>
 
           {/* Product List */}
           <section className="min-h-[60vh]">
