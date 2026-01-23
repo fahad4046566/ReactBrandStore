@@ -1,20 +1,21 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(),],
-   base: '/',
+  plugins: [react(), tailwindcss()],
+  base: "/",
   build: {
-    outDir: 'dist',
+    outDir: "dist",
+    sourcemap: true,
+    minify: "terser",
     rollupOptions: {
       input: {
-        main: './index.html'
-      }
-    }
+        main: "./index.html",
+      },
+    },
   },
   server: {
-    historyApiFallback: true
-  }
-})
+    historyApiFallback: true,
+  },
+});
